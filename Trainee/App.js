@@ -4,6 +4,7 @@ import { TailwindProvider } from "tailwindcss-react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import HomeScreen from "./screens/HomeScreen";
+import DeliveryScreen from "./screens/DeliveryScreen";
 
 const Stack = createNativeStackNavigator();
 export default function App() {
@@ -12,6 +13,7 @@ export default function App() {
       <TailwindProvider>
         <Stack.Navigator>
           <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen name="Delivery" component={DeliveryScreen} />
         </Stack.Navigator>
       </TailwindProvider>
     </NavigationContainer>
