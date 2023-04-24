@@ -7,7 +7,6 @@ import RestaurantCard from "../components/RestaurantCard";
 
 const FeatureRow = ({ title, desc, id }) => {
   const store = useSelector((state) => state.storeSlice);
-  console.log(store);
   return (
     <View>
       <View className="flex-row mt-4 items-center justify-between px-4">
@@ -23,30 +22,23 @@ const FeatureRow = ({ title, desc, id }) => {
         showsHorizontalScrollIndicator={false}
         className="pt-4"
       >
-        <RestaurantCard
-          id="1"
-          imgSrc={require("../assets/sushi-place.jpg")}
-          title="Shushi"
-          rating={4.5}
-          genre="Japanese"
-          address="st. 2434 Long Drives"
-          short_desc="best shushi"
-          dishes={[]}
-          long={20}
-          lat={24}
-        />
-        <RestaurantCard
-          id="1"
-          imgSrc={require("../assets/sushi-place.jpg")}
-          title="Shushi"
-          rating={4.5}
-          genre="Japanese"
-          address="st. 2434 Long Drives"
-          short_desc="best shushi"
-          dishes={[]}
-          long={20}
-          lat={24}
-        />
+        {store.restaurantStore.map((item) => {
+          return (
+            <RestaurantCard
+              key={item.id}
+              id={item.id}
+              imgSrc={require("../assets/restaurant/" + item.imgSrc)}
+              title={item.name}
+              rating={item.rating}
+              genre={"Japanese"}
+              address={item.address}
+              short_desc={item.shortDesc}
+              dishes={[]}
+              long={item.long}
+              lat={item.lat}
+            />
+          );
+        })}
       </ScrollView>
     </View>
   );

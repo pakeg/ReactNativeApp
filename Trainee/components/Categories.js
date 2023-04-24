@@ -1,43 +1,24 @@
 import React from "react";
 import { ScrollView, StyleSheet } from "react-native";
+import { useSelector } from "react-redux";
 
 import CategoryCard from "../components/CategoryCard";
 
 export default function Categories() {
+  const store = useSelector((state) => state.storeSlice);
   return (
     <ScrollView
       contentContainerStyle={styles.container}
       horizontal={true}
       showsHorizontalScrollIndicator={false}
     >
-      <CategoryCard
-        imgSrc={require("../assets/sushi-place.jpg")}
-        title="Category"
-      />
-      <CategoryCard
-        imgSrc={require("../assets/sushi-place.jpg")}
-        title="Category"
-      />
-      <CategoryCard
-        imgSrc={require("../assets/sushi-place.jpg")}
-        title="Category"
-      />
-      <CategoryCard
-        imgSrc={require("../assets/sushi-place.jpg")}
-        title="Category"
-      />
-      <CategoryCard
-        imgSrc={require("../assets/sushi-place.jpg")}
-        title="Category"
-      />
-      <CategoryCard
-        imgSrc={require("../assets/sushi-place.jpg")}
-        title="Category"
-      />
-      <CategoryCard
-        imgSrc={require("../assets/sushi-place.jpg")}
-        title="Category"
-      />
+      {store.categoryStore.map((item) => (
+        <CategoryCard
+          key={item.id}
+          imgSrc={require("../assets/category/" + item.imgSrc)}
+          title={item.name}
+        />
+      ))}
     </ScrollView>
   );
 }

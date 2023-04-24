@@ -1,8 +1,8 @@
-export default {
-  wagamama: {
+export default [
+  {
     id: 1,
     name: "wagamama",
-    shordDesc:
+    shortDesc:
       "Японський мережевий ресторан в азійському стилі, де страви подають на довгих спільних столах.",
     imgSrc: "wagamama.jpg",
     long: 9.152497450201306,
@@ -12,10 +12,10 @@ export default {
     category: [{ id: 1 }],
     dishes: [{ id: 1 }, { id: 2 }, { id: 3 }],
   },
-  sushiPanda: {
+  {
     id: 2,
     name: "sushiPanda",
-    shordDesc: "Панда Суші - онлайн-ресторан - безкоштовна доставка суші",
+    shortDesc: "Панда Суші - онлайн-ресторан - безкоштовна доставка суші",
     imgSrc: "sushiPanda.png",
     long: 34.55794332011023,
     lat: 48.64908963631659,
@@ -24,10 +24,10 @@ export default {
     category: [{ id: 1 }, { id: 5 }],
     dishes: [{ id: 4 }, { id: 5 }, { id: 6 }],
   },
-  fiveGuys: {
+  {
     id: 3,
     name: "fiveGuys",
-    shordDesc:
+    shortDesc:
       "американська мережа швидкого харчування, що спеціалізується на продажі гамбургерів, хот-догів і картоплі фрі.",
     imgSrc: "fiveGuys.png",
     long: 9.196657964261256,
@@ -37,10 +37,10 @@ export default {
     category: [{ id: 3 }, { id: 2 }, { id: 5 }],
     dishes: [{ id: 7 }, { id: 8 }, { id: 9 }],
   },
-  subway: {
+  {
     id: 4,
     name: "subway",
-    shordDesc:
+    shortDesc:
       "найбільша у світі мережа ресторанів швидкого харчування, що працює за принципом франчайзингу.",
     imgSrc: "subway.png",
     long: 46.58245942716794,
@@ -50,10 +50,10 @@ export default {
     category: [{ id: 4 }, { id: 3 }, { id: 6 }],
     dishes: [{ id: 10 }, { id: 2 }, { id: 4 }],
   },
-  kfc: {
+  {
     id: 5,
     name: "kfc",
-    shordDesc:
+    shortDesc:
       "американська мережа ресторанів швидкого харчування, що спеціалізуються на стравах із курятини. Заснована в 1952 Гарландом Сандерсом під вивіскою Kentucky Fried Chicken.",
     imgSrc: "kfc.png",
     long: 35.85432998963157,
@@ -63,10 +63,10 @@ export default {
     category: [{ id: 5 }, { id: 2 }],
     dishes: [{ id: 6 }, { id: 8 }, { id: 10 }],
   },
-  macDolands: {
+  {
     id: 6,
     name: "macDolands",
-    shordDesc:
+    shortDesc:
       "американська корпорація, до 2010 найбільша у світі мережа закладів швидкого харчування.",
     imgSrc: "macDolands.png",
     long: 35.082778792189245,
@@ -76,4 +76,4 @@ export default {
     category: [{ id: 6 }, { id: 1 }],
     dishes: [{ id: 1 }, { id: 3 }, { id: 5 }, { id: 7 }],
   },
-};
+];
