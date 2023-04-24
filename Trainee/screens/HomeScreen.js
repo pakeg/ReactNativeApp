@@ -41,7 +41,7 @@ export default function HomeScreen({ navigation }) {
           <TextInput
             placeholder="search a restaurant"
             keyboardType="default"
-            className="opacity-50"
+            className="opacity-50 flex-1 "
           />
         </View>
         <AdjustmentsVerticalIcon color="#00CCBB" />

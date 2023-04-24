@@ -22,7 +22,7 @@ const RestaurantCard = ({
         <View className="flex-row items-center space-x-1">
           <StarIcon color="green" size={22} opacity={0.5} />
           <Text className="text-xs text-gray-500">
-            <Text className="text-green-500">{rating}</Text>
+            <Text className="text-green-500 pr-2">{rating}</Text>
             {genre}
           </Text>
         </View>
