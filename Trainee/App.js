@@ -6,7 +6,7 @@ import { TailwindProvider } from "tailwindcss-react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import HomeScreen from "./screens/HomeScreen";
-import DeliveryScreen from "./screens/DeliveryScreen";
+import RestaurantScreen from "./screens/RestaurantScreen";
 
 const Stack = createNativeStackNavigator();
 export default function App() {
@@ -17,11 +17,11 @@ export default function App() {
           <Stack.Navigator>
             <Stack.Screen name="Home" component={HomeScreen} />
             <Stack.Screen
-              name="Delivery"
-              component={DeliveryScreen}
-              options={{
+              name="Restaurant"
+              component={RestaurantScreen}
+              options={() => ({
                 headerShown: false,
-              }}
+              })}
             />
           </Stack.Navigator>
         </TailwindProvider>

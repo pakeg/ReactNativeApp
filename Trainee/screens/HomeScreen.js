@@ -6,16 +6,19 @@ import {
   AdjustmentsVerticalIcon,
   MagnifyingGlassIcon,
 } from "react-native-heroicons/solid";
+import { useSelector } from "react-redux";
 
 import Categories from "../components/Categories";
 import FeatureRow from "../components/FeatureRow";
 
 export default function HomeScreen({ navigation }) {
+  const store = useSelector((state) => state.storeSlice.featureStore);
   useLayoutEffect(() => {
     navigation.setOptions({
       headerShown: false,
     });
   }, [navigation]);
+
   return (
     <SafeAreaView className="bg-white pt-5">
       <View className="flex-row pb-3 items-center mx-4 space-x-2 px-4">
@@ -48,9 +51,14 @@ export default function HomeScreen({ navigation }) {
       </View>
       <Categories />
 
-      <FeatureRow title="feature-1" desc="Our feature-1" id="3" />
-      <FeatureRow title="feature-2" desc="Our feature-2" id="2" />
-      <FeatureRow title="feature-2" desc="Our feature-2" id="1" />
+      {store.map((item) => (
+        <FeatureRow
+          key={item.id}
+          title={item.name}
+          desc={item.desc}
+          restaurant={item.restaurant}
+        />
+      ))}
     </SafeAreaView>
   );
 }

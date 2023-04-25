@@ -5,8 +5,8 @@ import { ArrowRightIcon } from "react-native-heroicons/outline";
 
 import RestaurantCard from "../components/RestaurantCard";
 
-const FeatureRow = ({ title, desc, id }) => {
-  const store = useSelector((state) => state.storeSlice);
+const FeatureRow = ({ title, desc }) => {
+  const store = useSelector((state) => state.storeSlice.restaurantStore);
   return (
     <View>
       <View className="flex-row mt-4 items-center justify-between px-4">
@@ -22,7 +22,7 @@ const FeatureRow = ({ title, desc, id }) => {
         showsHorizontalScrollIndicator={false}
         className="pt-4"
       >
-        {store.restaurantStore.map((item) => {
+        {store.map((item) => {
           return (
             <RestaurantCard
               key={item.id}
@@ -30,10 +30,10 @@ const FeatureRow = ({ title, desc, id }) => {
               imgSrc={require("../assets/restaurant/" + item.imgSrc)}
               title={item.name}
               rating={item.rating}
-              genre={"Japanese"}
+              category={item.category}
               address={item.address}
               short_desc={item.shortDesc}
-              dishes={[]}
+              dishes={item.dishes}
               long={item.long}
               lat={item.lat}
             />
