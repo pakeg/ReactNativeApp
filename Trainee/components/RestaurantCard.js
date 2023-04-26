@@ -1,8 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
-import React, { useMemo } from "react";
+import React from "react";
 import { Text, TouchableOpacity, View, Image } from "react-native";
 import { StarIcon, MapPinIcon } from "react-native-heroicons/solid";
-import { useSelector } from "react-redux";
 
 const RestaurantCard = ({
   id,
