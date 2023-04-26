@@ -63,7 +63,18 @@ export default function RestaurantScreen({ route: { params }, navigation }) {
       <View>
         <Text className="px-4 pt-6 mb-3 font-bold text-xl">Menu</Text>
 
-        <DishRow></DishRow>
+        {params.dishes.map((dish) => {
+          return (
+            <DishRow
+              key={dish.id}
+              id={dish.id}
+              title={dish.name}
+              desc={dish.desc}
+              imgSrc={dish.imgSrc}
+              price={dish.price}
+            ></DishRow>
+          );
+        })}
       </View>
     </ScrollView>
   );

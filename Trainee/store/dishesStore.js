@@ -59,7 +59,7 @@ export default [
     id: 9,
     name: "bucketduet",
     desc: "2 legs, 4 sharp wings, 4 original strips and medium fries.",
-    imgSrc: "bucketduet.png",
+    imgSrc: "bucket.png",
     price: 19,
   },
   {

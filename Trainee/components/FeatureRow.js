@@ -1,12 +1,10 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import { Text, View, ScrollView, StyleSheet } from "react-native";
 import { ArrowRightIcon } from "react-native-heroicons/outline";
 
 import RestaurantCard from "../components/RestaurantCard";
 
-const FeatureRow = ({ title, desc }) => {
-  const store = useSelector((state) => state.storeSlice.restaurantStore);
+const FeatureRow = ({ title, desc, restaurant }) => {
   return (
     <View>
       <View className="flex-row mt-4 items-center justify-between px-4">
@@ -22,7 +20,7 @@ const FeatureRow = ({ title, desc }) => {
         showsHorizontalScrollIndicator={false}
         className="pt-4"
       >
-        {store.map((item) => {
+        {restaurant.map((item) => {
           return (
             <RestaurantCard
               key={item.id}
