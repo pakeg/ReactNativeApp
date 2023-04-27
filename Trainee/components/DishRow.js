@@ -1,13 +1,23 @@
 import React, { useState } from "react";
 import { Text, TouchableOpacity, Image, View, Button } from "react-native";
 import { MinusCircleIcon, PlusCircleIcon } from "react-native-heroicons/solid";
-import { useDispatch } from "react-redux";
 
+import { useDispatch } from "react-redux";
 import { addToCard } from "../store/cartSlice";
-export default function DishRow({ id, title, desc, imgSrc, price }) {
+
+export default function DishRow({
+  id,
+  title,
+  desc,
+  imgSrc,
+  price,
+  restaurant,
+}) {
   const dispatch = useDispatch();
+
   const [count, setCount] = useState(0);
   const [isPressed, setIsPressed] = useState(false);
+
   return (
     <React.Fragment>
       <TouchableOpacity
@@ -62,7 +72,15 @@ export default function DishRow({ id, title, desc, imgSrc, price }) {
                 color="#00CCBB"
                 onPress={() => {
                   dispatch(
-                    addToCard({ id, name: title, desc, imgSrc, price, count })
+                    addToCard({
+                      id,
+                      title,
+                      desc,
+                      imgSrc,
+                      price,
+                      count,
+                      restaurant,
+                    })
                   );
                   setCount(0);
                   setIsPressed(!isPressed);
