@@ -10,15 +10,33 @@ const cartSlice = createSlice({
   reducers: {
     addToCard(state, action) {
       state.dishes.push(action.payload);
-      console.log(action);
     },
-    removeFromCard(state, { payload: { id } }) {
+    removeFromCard(state, { payload: { id, restaurant } }) {
       state.dishes = state.dishes.filter((dish) => {
-        return dish.id == id;
+        return dish.id != id || dish.restaurant != restaurant;
       });
     },
   },
 });
 
-export const { addToCard } = cartSlice.actions;
+export const infoAboutCart = (state) => {
+  const info = state.cartSlice.dishes.reduce(
+    (cur, next) => {
+      return {
+        summ: cur.summ + next.price * next.count,
+        count: cur.count + next.count,
+      };
+    },
+    { summ: 0, count: 0 }
+  );
+
+  const orderGroupByRest = state.cartSlice.dishes.reduce((acc, next) => {
+    if (!acc[next.restaurant]) acc[next.restaurant] = [];
+    acc[next.restaurant].push(next);
+    return acc;
+  }, {});
+
+  return { ...info, orderGroupByRest };
+};
+export const { addToCard, removeFromCard } = cartSlice.actions;
 export default cartSlice.reducer;
