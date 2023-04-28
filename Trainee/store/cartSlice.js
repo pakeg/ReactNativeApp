@@ -18,7 +18,14 @@ const cartSlice = createSlice({
     },
   },
 });
-
+export const infoAboutRestaurantCart = (state) => {
+  const restaurant = state.cartSlice.dishes.map((dish) => {
+    return state.storeSlice.restaurantStore.find(
+      (res) => res.name == dish.restaurant
+    );
+  });
+  return restaurant;
+};
 export const infoAboutCart = (state) => {
   const info = state.cartSlice.dishes.reduce(
     (cur, next) => {
