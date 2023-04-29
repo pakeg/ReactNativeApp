@@ -1,4 +1,4 @@
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 import React from "react";
 import { Text, TouchableOpacity, View, Image } from "react-native";
 import { StarIcon, MapPinIcon } from "react-native-heroicons/solid";
@@ -16,7 +16,7 @@ const RestaurantCard = ({
   lat,
 }) => {
   const navigation = useNavigation();
-
+  const route = useRoute();
   return (
     <TouchableOpacity
       onPress={() =>
@@ -33,7 +33,9 @@ const RestaurantCard = ({
           lat,
         })
       }
-      className="bg-white mr-3 shadow-sm"
+      className={`bg-white shadow-sm ${
+        route.name == "CategoryScreen" ? "mr-3 w-1/4 items-center" : ""
+      }`}
     >
       <Image alt={title} source={imgSrc} className="h-36 w-64 rounded-sm" />
       <View className="px-3 pb-6">

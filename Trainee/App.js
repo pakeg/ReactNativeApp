@@ -11,7 +11,6 @@ import CartScreen from "./screens/CartScreen";
 import OrderPreparationScreen from "./screens/OrderPreparationScreen";
 import CategoryScreen from "./screens/CategoryScreen";
 import DeliveryScreen from "./screens/DeliveryScreen";
-import { Text, TouchableOpacity } from "react-native";
 
 const Stack = createNativeStackNavigator();
 export default function App() {
@@ -55,16 +54,7 @@ export default function App() {
             <Stack.Screen
               name="CategoryScreen"
               component={CategoryScreen}
-              options={({ navigation }) => ({
-                headerTitle: "Choose taste",
-                headerRight: () => (
-                  <TouchableOpacity onPress={navigation.goBack}>
-                    <Text>Back</Text>
-                  </TouchableOpacity>
-                ),
-                headerLeft: () => <Text>2</Text>,
-                headerBackVisible: true,
-              })}
+              options={{ headerShown: false }}
             />
           </Stack.Navigator>
         </TailwindProvider>
