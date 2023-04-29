@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import * as Progress from "react-native-progress";
 import { XMarkIcon } from "react-native-heroicons/solid";
-// import MapView, { Marker } from "react-native-maps";
+import MapView, { Marker } from "react-native-maps";
 
 import { infoAboutRestaurantCart } from "../store/cartSlice";
 import { useSelector } from "react-redux";

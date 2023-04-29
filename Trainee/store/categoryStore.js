@@ -1,3 +1,13 @@
+export const categoryRestaurant = (state, id) => {
+  const restaurant = state.storeSlice.restaurantStore.filter((rest) => {
+    const catId = rest.category.map((cat) => {
+      if (cat.id == id) return cat.id;
+    });
+    return catId.includes(id);
+  });
+  return restaurant;
+};
+
 export default [
   {
     id: 1,
